@@ -9,8 +9,12 @@ import java.sql.SQLException;
 
 public class DbUtil {
     private static DataSource dataSource;
-    public static Connection getConnection() throws SQLException {
-        return getInstance().getConnection();
+    public static Connection getConnection() {
+        try {
+            return getInstance().getConnection();
+        } catch (SQLException e) {
+            throw new RuntimeException(e + "getConnection exception");
+        }
     }
     private static DataSource getInstance() {
         if (dataSource == null) {

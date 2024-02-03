@@ -7,14 +7,14 @@ public class User {
     private String password;
     public User(String email, String userName, String password) {
         this.id = 0;
-        this.userName = userName;
         this.email = email;
+        this.userName = userName;
         this.password = password;
     }
     public User(int id, String email, String userName, String password) {
         this.id = id;
-        this.userName = userName;
         this.email = email;
+        this.userName = userName;
         this.password = password;
     }
 

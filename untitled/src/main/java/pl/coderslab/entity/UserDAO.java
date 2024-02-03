@@ -34,7 +34,7 @@ public class UserDAO {
                      conn.prepareStatement(CREATE_USER_SQL_QUERY, PreparedStatement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, user.getEmail());
             ps.setString(2, user.getUserName());
-            ps.setString(3, hashPassword(user.getEmail()));
+            ps.setString(3, hashPassword(user.getPassword()));
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
             rs.next(); // ResultSet is an iterator - moving from 0 to 1st
